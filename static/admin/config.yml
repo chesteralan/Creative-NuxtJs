@@ -1,0 +1,13 @@
+backend:
+  name: github
+  repo: Davao-IT-Solutions/Triple-Sun-Auto-Supply
+site_url: https://www.davao.me/
+display_url: https://www.davao.me/
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+show_preview_links: false
+
+collections:
+  
