@@ -1,11 +1,12 @@
 <template>
   <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top py-3" :class="{ 'navbar-scrolled' : scrolled }">
     <div class="container">
-      <a
-        class="navbar-brand js-scroll-trigger"
-        href="#page-top"
-      >{{ site_title }}</a>
+      <nuxt-link class="navbar-brand js-scroll-trigger" to="/">
+        {{ siteTitle }}
+      </nuxt-link>
+
       <button
+        v-if="hasLinks"
         class="navbar-toggler navbar-toggler-right"
         type="button"
         data-toggle="collapse"
@@ -16,22 +17,10 @@
       >
         <span class="navbar-toggler-icon" />
       </button>
-      <div id="navbarResponsive" class="collapse navbar-collapse">
+      <div v-if="hasLinks" id="navbarResponsive" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              href="#portfolio"
-            >Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          <li v-for="item in navLinks" :key="item.sys.id" class="nav-item">
+            <navLink :content="item" />
           </li>
         </ul>
       </div>
@@ -41,13 +30,29 @@
 
 <script>
 
-import settings from '../content/settings.json'
-
 export default {
+  props: {
+    content: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
   data () {
     return {
-      scrolled: false,
-      site_title: settings.site_title
+      scrolled: false
+    }
+  },
+  computed: {
+    siteTitle () {
+      return this.content.title
+    },
+    navLinks () {
+      return this.content.links || []
+    },
+    hasLinks () {
+      return (typeof this.content.links !== 'undefined')
     }
   },
   beforeMount () {
@@ -55,6 +60,9 @@ export default {
   },
   beforeDestroy () {
     window.removeEventListener('scroll', this.handleScroll)
+  },
+  created () {
+    // console.log(this.content)
   },
   methods: {
     handleScroll (event) {

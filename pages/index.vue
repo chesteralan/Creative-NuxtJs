@@ -1,18 +1,19 @@
 <template>
-  <div id="page-top">
-    <Nav />
-    <Header />
-    <About />
-    <Services />
-    <Portfolio />
-    <Cta />
-    <Contact />
-    <Footer />
-  </div>
+  <Page :slug="default_page" />
 </template>
 
 <script>
-export default {}
+import settings from '../content/settings.json'
+export default {
+  data () {
+    return {
+      default_page: settings.default_page
+    }
+  },
+  created () {
+    // console.log(settings.default_page)
+  }
+}
 </script>
 
 <style>

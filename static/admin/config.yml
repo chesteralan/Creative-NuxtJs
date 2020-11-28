@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Davao-IT-Solutions/Triple-Sun-Auto-Supply
+  repo: chesteralan/Creative-NuxtJs
 site_url: https://www.davao.me/
 display_url: https://www.davao.me/
 local_backend: true
@@ -10,4 +10,18 @@ public_folder: "/images/uploads"
 show_preview_links: false
 
 collections:
+  - name: "settings"
+    label: "Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: 'general'
+        label: 'Site Settings'
+        file: 'content/settings.json'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Global title', name: 'site_title', widget: 'string' }
+          - { label: 'Global description', name: 'site_description', widget: 'string' }
+          - { label: 'Default Page Slug', name: 'default_page', widget: 'string', default: 'homepage' }
   
