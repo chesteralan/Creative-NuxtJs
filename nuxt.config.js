@@ -37,7 +37,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/contentful', srr: false },
-    { src: '~/plugins/creative-contentful', srr: false }
+    { src: '~/plugins/creative', srr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="page-section">
+  <section :id="getSlug" class="page-section">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
@@ -15,15 +15,15 @@
       <div class="row">
         <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
           <i class="fas fa-phone fa-3x mb-3 text-muted" />
-          <div>+1 (555) 123-4567</div>
+          <div>{{ getPhoneNumber }}</div>
         </div>
         <div class="col-lg-4 mr-auto text-center">
           <i class="fas fa-envelope fa-3x mb-3 text-muted" />
           <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
           <a
             class="d-block"
-            href="mailto:contact@yourwebsite.com"
-          >contact@yourwebsite.com</a>
+            :href="`mailto:${getEmailAddress}`"
+          >{{ getEmailAddress }}</a>
         </div>
       </div>
     </div>
@@ -44,12 +44,21 @@ export default {
     getTitle () {
       return this.content.title
     },
+    getSlug () {
+      return this.content.slug || 'contact'
+    },
     getDescription () {
       return this.content.description
+    },
+    getPhoneNumber () {
+      return this.content.phoneNumber
+    },
+    getEmailAddress () {
+      return this.content.emailAddress
     }
   },
   created () {
-    // console.log('FooterSection', this.content)
+    // console.log('contactSection', this.content)
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="portfolio">
+  <section id="portfolio">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div v-for="item in galleryItems" :key="item.sys.id" class="col-lg-4 col-sm-6">
@@ -7,11 +7,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-
 export default {
   props: {
     content: {

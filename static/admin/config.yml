@@ -1,8 +1,8 @@
 backend:
   name: github
   repo: chesteralan/Creative-NuxtJs
-site_url: https://www.davao.me/
-display_url: https://www.davao.me/
+site_url: https://creative-nuxtjs.netlify.app/
+display_url: https://creative-nuxtjs.netlify.app/
 local_backend: true
 publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
