@@ -21,7 +21,7 @@
       <div v-if="hasLinks" id="navbarResponsive" class="navbar-collapse" :class="{ 'collapse' : collapseMenu}">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li v-for="item in navLinks" :key="item.sys.id" class="nav-item">
-            <Link :key="item.sys.id" :content="item" />
+            <Link :content="item" />
           </li>
         </ul>
       </div>
