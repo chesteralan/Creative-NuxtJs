@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-3 col-md-6 text-center">
+  <div :id="getId" class="col-lg-3 col-md-6 text-center">
     <div class="mt-5">
       <i :class="itemIcon" />
       <h3 class="h4 mb-2">

@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link v-if="isNuxtLink" :to="linkUrl" class="js-scroll-trigger" :class="className" :target="target">
+  <nuxt-link v-if="isNuxtLink" :to="linkUrl" class="" :class="className" :target="target">
     {{ linkName }}
   </nuxt-link>
-  <a v-else :href="linkUrl" class="js-scroll-trigger" :class="className" :target="target">
+  <a v-else :href="linkUrl" class="" :class="className" :target="target">
     {{ linkName }}
   </a>
 </template>
