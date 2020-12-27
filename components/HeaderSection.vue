@@ -63,7 +63,7 @@ export default {
     }
   },
   created () {
-    // console.log('HeaderSection', this.content)
+    console.log('HeaderSection', this.content)
   },
   methods: {
     formatModuleName (text) {

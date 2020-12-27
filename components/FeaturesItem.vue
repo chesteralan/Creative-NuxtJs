@@ -36,6 +36,7 @@ export default {
         break
     }
   },
+  fetchOnServer: false,
   data () {
     return {
       entry: {},

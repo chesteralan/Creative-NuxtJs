@@ -28,6 +28,7 @@ export default {
       this.link = this.entry.fields.link.fields
     }
   },
+  fetchOnServer: false,
   data () {
     return {
       entry: {},

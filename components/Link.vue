@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link v-if="isNuxtLink" :to="linkUrl" class="" :class="className" :target="target">
+  <nuxt-link v-if="isNuxtLink" :key="getId" :to="linkUrl" :class="className" :target="target">
     {{ linkName }}
   </nuxt-link>
-  <a v-else :href="linkUrl" class="" :class="className" :target="target">
+  <a v-else :key="getId" :href="linkUrl" :class="className" :target="target">
     {{ linkName }}
   </a>
 </template>
@@ -52,6 +52,7 @@ export default {
         break
     }
   },
+  fetchOnServer: false,
   data () {
     return {
       entry: {},
@@ -68,7 +69,7 @@ export default {
     }
   },
   created () {
-    // console.log('Link', this.content)
+    console.log('Link', this.content)
   },
   methods: {
     getEntryType (entry) {
