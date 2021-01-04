@@ -69,7 +69,7 @@ export default {
     }
   },
   created () {
-    console.log('Link', this.content)
+    // console.log('Link', this.content)
   },
   methods: {
     getEntryType (entry) {
